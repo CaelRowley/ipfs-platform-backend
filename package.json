@@ -1,0 +1,53 @@
+{
+  "name": "ipfs-platform-backend",
+  "version": "0.0.1",
+  "description": "A modular platform for hosting data that will allow developers to easily create their own plugins for using that data",
+  "main": "app.js",
+  "scripts": {
+    "build": "npm-run-all clean build:src build:tests",
+    "build:src": "babel src -d lib/src --copy-files",
+    "build:tests": "babel tests -d lib/tests",
+    "clean": "npm-run-all clean:src clean:tests",
+    "clean:src": "rimraf lib/src",
+    "clean:tests": "rimraf lib/tests",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "start": "forever -c 'nodemon --exitcrash --exec babel-node' src/app.js",
+    "serve": "node lib/src/app.js",
+    "test": "LOG_LEVEL=error npm-run-all clean:tests build:tests test:mocha",
+    "test:mocha": "find ./lib/tests/* -name '*_test.js' | xargs mocha --exit -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaelRowley/ipfs-platform-backend.git"
+  },
+  "author": "Cael Rowley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CaelRowley/ipfs-platform-backend/issues"
+  },
+  "homepage": "https://github.com/CaelRowley/ipfs-platform-backend#readme",
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "express": "^4.16.4",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-plugin-inline-dotenv": "^1.2.0",
+    "chai": "^4.2.0",
+    "dotenv": "^6.2.0",
+    "eslint": "^5.11.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "forever": "^0.15.3",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.2",
+    "supertest": "^3.3.0"
+  }
+}
