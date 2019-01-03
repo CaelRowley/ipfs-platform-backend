@@ -20,7 +20,7 @@ npm start
 The `src` directory contains the source code for the server and is written in JavaScript. This source code 
 is transpiled to the `lib` directory for deployment and testing.
 1. `npm run build` will transpile the `src` directory into `lib`
-2. `npm run clean` will delete the transpiled code.
+2. `npm run clean` will delete the transpiled code
 
 ## Debugging
 
@@ -28,7 +28,7 @@ To debug with VS Code you will need to:
 1. Select the `Debug` tab
 2. Choose the `Add Configuration` option from the debug dropdown list
 3. Select `Node.js` for the debug environment
-4. Finally add the following configuration to the auto generated launch.json:
+4. Finally add the following configuration to the auto generated `launch.json`:
 
 ```
 "configurations": [
@@ -55,8 +55,8 @@ npm test
 ## Linting
 
 The project is using ESLint as the linter. The configuration for this is stored in `.eslintrc.json`. You can use the following commands:
-1. `npm run lint` to run ESLint.
-2. `npm run lint:fix` to run ESLint with the --fix prefix which will automatically fix certain linting errors.
+1. `npm run lint` to run ESLint
+2. `npm run lint:fix` to run ESLint with the --fix prefix which will automatically fix certain linting errors
 
 ## Docker
 
