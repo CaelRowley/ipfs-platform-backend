@@ -30,6 +30,8 @@
   "dependencies": {
     "app-root-path": "^2.1.0",
     "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "ipfs-http-client": "^28.1.0",
     "winston": "^3.1.0"
   },
   "devDependencies": {
