@@ -7,7 +7,7 @@ const options = {
     filename: `${appRoot}/logs/app.log`,
     format: winston.format.combine(
       winston.format.timestamp({
-        format: 'YYYY-MM-DD hh:mm:ss A ZZ',
+        format: 'YYYY-MM-DD HH:mm:ss ZZ',
       }),
       winston.format.align(),
       winston.format.printf((info) => {
@@ -27,7 +27,7 @@ const options = {
     format: winston.format.combine(
       winston.format.colorize(),
       winston.format.timestamp({
-        format: 'YYYY-MM-DD hh:mm:ss A ZZ',
+        format: 'YYYY-MM-DD HH:mm:ss ZZ',
       }),
       winston.format.align(),
       winston.format.printf((info) => {
