@@ -11,12 +11,12 @@ ipfsService.upload = async () => {
   try {
     const response = await ipfs.add(tempBuffer);
     const fileHash = response[response.length - 1].hash;
-    logger.debug('file CID: ' + fileHash);
+    logger.debug(`file CID: ${fileHash}`);
     return fileHash;
   } catch (error) {
     logger.error(error);
     return 'Issue uploading file';
-  };
+  }
 };
 
 ipfsService.download = () => {
