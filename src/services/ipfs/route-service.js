@@ -7,13 +7,16 @@ export const ipfsService = {};
 const tempFile = fs.readFileSync(`${__dirname}/temp.txt`);
 const tempBuffer = Buffer.from(tempFile);
 
-ipfsService.upload = () => {
-  ipfs.add(tempBuffer, (err, response) => {
-    if (err) {
-      logger.debug(err);
-    }
-    logger.debug(response[response.length - 1].hash);
-  });
+ipfsService.upload = async () => {
+  try {
+    const response = await ipfs.add(tempBuffer);
+    const fileHash = response[response.length - 1].hash;
+    logger.debug(`file CID: ${fileHash}`);
+    return fileHash;
+  } catch (error) {
+    logger.error(error);
+    return 'Issue uploading file';
+  }
 };
 
 ipfsService.download = () => {
