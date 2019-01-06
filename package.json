@@ -14,7 +14,7 @@
     "lint:fix": "eslint --fix .",
     "start": "forever -c 'nodemon --exitcrash --exec babel-node' src/app.js",
     "serve": "node lib/src/app.js",
-    "test": "LOG_LEVEL=error npm-run-all build test:mocha",
+    "test": "LOG_LEVEL_CONSOLE=error LOG_LEVEL_FILE=error npm-run-all build test:mocha",
     "test:mocha": "find ./lib/tests/* -name '*_test.js' | xargs mocha --require @babel/polyfill --exit -R spec"
   },
   "repository": {
@@ -48,6 +48,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "forever": "^0.15.3",
+    "is-ipfs": "^0.4.8",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.9",
     "npm-run-all": "^4.1.5",
