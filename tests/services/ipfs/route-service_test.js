@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars, no-undef */
 import chai from 'chai';
-import { ipfsService } from '../../../src/services/ipfs/route-service';
 import isIPFS from 'is-ipfs';
+import { ipfsService } from '../../../src/services/ipfs/route-service';
 
 const should = chai.should();
 
