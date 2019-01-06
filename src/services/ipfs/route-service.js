@@ -14,8 +14,7 @@ ipfsService.upload = async () => {
     logger.debug(`file CID: ${fileHash}`);
     return fileHash;
   } catch (error) {
-    logger.error(error);
-    return 'Issue uploading file';
+    throw Error(error);
   }
 };
 

@@ -14,8 +14,8 @@
     "lint:fix": "eslint --fix .",
     "start": "forever -c 'nodemon --exitcrash --exec babel-node' src/app.js",
     "serve": "node lib/src/app.js",
-    "test": "LOG_LEVEL=error npm-run-all clean:tests build:tests test:mocha",
-    "test:mocha": "find ./lib/tests/* -name '*_test.js' | xargs mocha --exit -R spec"
+    "test": "LOG_LEVEL=error npm-run-all build test:mocha",
+    "test:mocha": "find ./lib/tests/* -name '*_test.js' | xargs mocha --require @babel/polyfill --exit -R spec"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.2.3",
     "babel-plugin-inline-dotenv": "^1.2.0",
     "chai": "^4.2.0",
